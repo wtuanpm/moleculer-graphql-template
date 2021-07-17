@@ -1,0 +1,15 @@
+{
+  "Hello": {
+    "Messages": {
+      "Errors": {},
+      "Info": {
+        "SayHello": "Hello, {{firstName}}"
+      }
+    }
+  },
+  "User": {
+    "Messages": {
+      "Errors": {}
+    }
+  }
+}

@@ -1,0 +1,22 @@
+type Query {
+  greeter: String
+}
+
+type Mutation {
+  hello(name: String): Person
+}
+
+enum HelloSampleCodes {
+  HELLO
+  HI
+}
+
+type MutationHelloResponse {
+  person: Person
+  type: HelloSampleCodes
+}
+
+type Person {
+  name: String
+  age: Int
+}

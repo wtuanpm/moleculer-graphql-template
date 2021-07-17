@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  auth:
+    build:
+      context: .
+    image: go-auth
+    environment:
+      SERVICES: auth
+volumes:
+  data:

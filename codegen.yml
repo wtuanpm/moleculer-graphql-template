@@ -1,0 +1,18 @@
+schema: src/graphql/schema/schema.graphql
+generates:
+  src/graphql/types/generated-graphql-types.ts:
+    config:
+      enumValues:
+        RoleCodes: @gobysend/goby-definition/dist/enums#RoleCodes
+        HelloSampleCodes: @gobysend/hello-exposure/dist/exposure/src/enums#HelloSampleCodes
+    plugins:
+      - typescript
+      - typescript-resolvers
+
+  ../exposure/src/graphql/generated-graphql-types.ts:
+    config:
+      enumValues:
+        RoleCodes: @gobysend/goby-definition/dist/enums#RoleCodes
+        HelloSampleCodes: ../enums#HelloSampleCodes
+    plugins:
+      - typescript

@@ -1,0 +1,41 @@
+## keep this line for all service
+directive @auth(roles: [RoleCodes] = [], allowWithoutAccount: Boolean = false, allowWithoutVerify: Boolean = false) on OBJECT | FIELD_DEFINITION
+
+scalar Upload
+
+enum ErrorCodes {
+  INVALID_PASSWORD
+  USER_NOT_FOUND
+  REFRESH_TOKEN_INVALID
+  PHONE_NUMBER_ALREADY_EXISTS
+  EMAIL_ALREADY_EXISTS
+  BAD_USER_INPUT
+  FORBIDDEN
+  CAPTCHA_INVALID
+}
+
+enum EventTypes {
+  ACTIVITY_LOG
+  SYSTEM_LOG
+  SOME_ONE_SAY_HELLO
+}
+
+type Paginate {
+  current: Int
+  totalPage: Int
+  pageSize: Int!
+}
+
+enum RoleCodes {
+  GOBY_ADMIN
+  GOBY_USER
+
+  BRAND_ADMIN
+  BRAND_USER
+  BRAND_SUPPORTER
+
+  ACCOUNT_ADMIN
+  ACCOUNT_MANAGER
+  ACCOUNT_AUTHOR
+  ACCOUNT_VIEWER
+}

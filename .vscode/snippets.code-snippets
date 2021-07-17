@@ -1,0 +1,27 @@
+{
+  "Create muleculer event": {
+    "prefix": "cme",
+    "body": ["export const $1: EventSchema = {", "  handler: async ctx => {", "    console.log('listenActivityLog', ctx.params);", "  },", "};"],
+    "description": "Create muleculer event"
+  },
+  "Create muleculer lifecycle": {
+    "prefix": "cml",
+    "body": ["import { LifecycleSchema } from '@utils/moleculer';", "", "export const lifecycle: LifecycleSchema = {", "  // Note: Created is not async function", "  created() {", "    console.log('Service created');", "  },", "", "  async started() {},", "", "  async stopped() {},", "};", ""],
+    "description": "Create muleculer lifecycle"
+  },
+  "Create graphql mutation": {
+    "prefix": "cgm",
+    "body": ["export const $1: GraphqlActionSchema<$2, $3> = {", "  graphql: {", "    mutation: '$1',", "  },", "  params: {},", "  handler: async ctx => {", "    $4", "  },", "};", ""],
+    "description": "Create graphql mutation"
+  },
+  "Create graphql query": {
+    "prefix": "cgq",
+    "body": ["export const $1: GraphqlActionSchema<$2, $3> = {", "  graphql: {", "    query: '$1',", "  },", "  params: {},", "  handler: async ctx => {", "    $4", "  },", "};", ""],
+    "description": "Create graphql query"
+  },
+  "": {
+    "prefix": "/**-",
+    "body": ["", "/**------------------------------------------------------------------------------------------", " * $1", " *------------------------------------------------------------------------------------------*/"],
+    "description": ""
+  }
+}
